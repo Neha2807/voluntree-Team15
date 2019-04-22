@@ -13,6 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+ 	<!-- This div contains the entire navigation bar for this page -->
 <body>
     <div class=" topnav navbar-fixed-top" id="myTopnav">
         <a href=""><img src="images/logo.png" class="logo-img"></a>          
@@ -22,6 +23,7 @@
         <a href="#about">About Us</a>
         <a href="">
         <a id ="user">
+<!-- This div contains the drop-down options the user will see when he clicks on "Welcone (first name) ! " -->
         <div class="dropdown1">
           <a class="nav-link dropdown-toggle" href="#" role="button" id="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
           <div class="dropdown-menu" aria-labelledby="name">
@@ -36,6 +38,7 @@
         </a>
       </div>
     </a>
+<!-- This script executes when any user signs out from the website. Login and Signup tabs re-appear in the navigation bar -->
     <script>
        $('#signout').click(function(){
           sessionStorage.clear();
@@ -44,6 +47,8 @@
           document.getElementById("signup").className=" active";
       })
     </script>
+  <!-- This script executes when any user logs into the website. 
+    Sign up and Login tabs disappear from the navigation bar and user can see Welcome (First name )! -->
     <script>
           if(sessionStorage.getItem("firstname")!=null){
           document.getElementById("login").className+=" disappear"
@@ -54,7 +59,7 @@
           document.getElementById("name").className= " disappear";
           }
     </script>
-      
+      <!-- This script is used to make the navigation bar responsive for the mobile -->   
     <script>
      function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -65,18 +70,22 @@
         }
       }
    </script>
+<!-- This div appears at the top of the page as the title --> 
 <div id="title">Join a community of people who care as much as you do</div>
+<!-- This div appears jsut below the title --> 
 <div id="account">What type of account would you like?</div>
 <div class="container">
 
   <a href="sign-up-mockup.html" class="card">
     <img class="card-img-top" src="images/volun.png" alt="Card image">
+   <!-- This div contains the volunteer option -->
     <div class="card-body">
       <h4 class="card-title" style="text-align:center; color: #5C9314; font-weight: bold">Volunteer</h4>
       
     </div>
     <a href="" class="card">
-            <img class="card-img-top" src="images/org.png" alt="Card image" >
+            <img class="card-img-top" src="images/org.png" alt="Card image" > <!-- This img tag contains the image for the organization -->
+      <!-- This div contains the Organisation option -->
             <div class="card-body">
               <h4 class="card-title" style="text-align:center; color: #5C9314; font-weight: bold">Organisation</h4>
               
