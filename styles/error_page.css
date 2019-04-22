@@ -1,0 +1,105 @@
+.bg-image{
+	background-image: url("../images/Error.jpeg");
+	background-size: cover; 
+	background-repeat: no-repeat;
+	filter: 70%;
+	backface-visibility: 30%;
+	overflow-y: hidden;
+	/* -webkit-filter: blur(5px); */
+	/* border-radius: 50px */
+	
+
+}
+
+h1{
+	color: #e63900;
+	text-align: center;
+	text-shadow: 1px 0.5px #bfbfbf;
+	padding-top: 10px;
+	font-family: 'Open Sans Condensed',sans-serif;
+}
+
+/*h2{
+	color: #ffffff;
+	text-align: center;	
+	margin-top: 550px;
+}*/
+
+h4{
+	color: #ffffff;
+	margin-left: 670px; 
+	margin-top: 100px;
+}
+
+a{
+	color: #ffffff
+
+}
+
+.team-name{
+	margin-left: 420px; 
+	font-weight: 40%; 
+	font-size: 0.8em;
+}
+
+.card{
+	margin-top: 250px;
+	margin-left: 20px; 
+	margin-bottom: 30px;
+	font-weight: 10px;
+}
+
+@media all and (max-width: 500px) {
+	.card {
+		margin-top: 200px;
+		margin-left: 110px; 
+		margin-bottom: 30px;
+		font-family: 'Open Sans Condensed',sans-serif;
+	}
+	.bg-image{
+		margin-top: 50px;
+		background-image: url("../images/error_cropped.jpg");
+	
+		background-size: cover; 
+		border: 100px;
+		/* border-radius: 100px;
+		-webkit-border-radius: 100px;
+		-moz-border-radius: 100%; */
+		display: block;
+
+				/* -webkit-filter: blur(5px); */
+		
+	
+  }
+}
+
+h1{
+	font-family: 'Open Sans Condensed',sans-serif;
+	font-weight: bolder;
+
+}
+
+h2{
+	text-align: center;
+	font-family: 'Open Sans Condensed',sans-serif;
+	font-weight: 700 !important;
+
+
+}
+
+.error-subheading{
+	margin-top: 25px;
+text-shadow: 1px 0.5px #bfbfbf; 
+	font-family: 'Open Sans Condensed',sans-serif;
+	font-weight: bolder;
+	
+}
+
+h3{
+	text-align: center;
+	font-family: 'Open Sans Condensed',sans-serif;
+	font-weight: bolder !important;
+}
+body{
+	font-family: 'Open Sans Condensed',sans-serif;
+}

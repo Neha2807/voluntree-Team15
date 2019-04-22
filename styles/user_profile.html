@@ -1,0 +1,184 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    
+    <script>
+        // This script initializes the Firebase
+        var config = {
+          apiKey: "AIzaSyDIc4ZI8QCO_VZa4CXfJVkubAaWHt5NG94",
+          authDomain: "voluntree-c7ba8.firebaseapp.com",
+          databaseURL: "https://voluntree-c7ba8.firebaseio.com",
+          projectId: "voluntree-c7ba8",
+          storageBucket: "voluntree-c7ba8.appspot.com",
+          messagingSenderId: "421391139349"
+        } ;
+        firebase.initializeApp(config);
+      
+        
+      </script>
+
+</head>
+
+<!-- This div contains list of tabs visible in the navigation bar -->
+<div class=" topnav navbar-fixed-top" id="myTopnav"> <!-- Navigation bar is fixed at the top as the user scrolls -->
+    <a href="index.html"><img src="images/logo.png" class="logo-img"></a>  <!-- The logo of the website is also placed on the navigation bar -->       
+    <a href="selection.html" id ="signup" class="active">Sign Up</a>
+    <a href="login.html" id ="login">Log In</a>
+    <a href="#about" >Contact</a>
+    <a href="#about">About Us</a>
+    <a href="">
+    <a id ="user">
+    <div class="dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" id="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+      <div class="dropdown-menu" aria-labelledby="name">
+        <a class="dropdown-item" href="user_profile.html">Profile</a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item" id="signout">Sign Out</a>
+      </div>
+    </div>  
+  </a>  
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</a>
+
+<!-- This script executes when any user signs out from the website. Login and Signup tabs re-appear in the navigation bar -->
+<script>
+   $('#signout').click(function(){
+      sessionStorage.clear();
+      document.getElementById("name").className+= " disappear";
+      document.getElementById("login").className-= "disappear";
+      document.getElementById("signup").className=" active";
+      window.replace("index.html");
+  })
+</script>
+
+ <!-- This script executes when any user logs into the website. 
+    Sign up and Login tabs disappear from the navigation bar and user can see Welcome (First name )! -->
+<script>
+      if(sessionStorage.getItem("firstname")!=null){
+      document.getElementById("login").className+=" disappear"
+      document.getElementById("signup").className+=" disappear";
+      document.getElementById("name").innerHTML = "Welcome "+sessionStorage.getItem("firstname")+" !";
+      } else {
+      document.getElementById("user").className= " disappear";
+      document.getElementById("name").className= " disappear";
+      }
+</script>
+
+<!-- This script is used to make the navigation bar responsive for the mobile -->  
+<script>
+ function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav navbar-fixed-top") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav navbar-fixed-top";
+    }
+  }
+</script>
+
+
+  <div class="cover"></div>
+  
+  <!-- This div adds the avatar image on the left side of the page -->
+  <div class="content">
+    	<div class="col" id="left">
+      		<div class="panel" id="user">
+        	<div class="header"></div>
+        	<div id="userImage">
+          		<img id ="img"src ="images/avatar.png">
+        	</div>
+        <div class="block">
+          <h2 id = "user_name"></h2>
+
+          
+          <div class="detail">
+            <div class="icon"><i class="fa fa-envelope"></i></div>
+            <div id="email"></div>
+          </div>
+        
+        </div>
+      </div>   
+    </div>
+    <div class="col">
+      
+      <!-- This div will show the list of events the volunteer has registered in -->
+      <div class="col" id="topSection">
+        <div class="col panel" id="upcomingEvents">
+          <div class="header">Upcoming Events</div>
+          <div id="itemrow" class="item row">
+            <div id="event_name">
+            
+            <!-- This div contains the view and Unregister button functionalities -->
+            </div>
+            <a href="event.html" class="btn btn-success" id="register_button" >View</a>
+            <a href="#" class="btn btn-success" id="register_button" data-toggle="modal" data-target="#myModal" onclick="clearregistration()">Unregister</a>
+          </div>      
+        </div>
+        
+        <!-- This div contains list of all stories the user has posted for any event -->
+        <div class="col panel " style="margin-top: 0px"id="upcomingEvents">
+            <div class="header">Stories</div>
+            <div class="item row" style="font-size:1.2em">
+                "This was my first experience donating blood. The volunteers at the camp were very helpful and supportive.
+                Proper guidance was provided at each step. I was seated at a very comfortable recliner and the process lasted
+                around 15 minutes. I was a bit nervous initially but felt really glad I went ahead with this. I recommend
+                everyone to be a part of this event."
+            </div>
+            <div class="item row" style="font-size:1.2em">
+                "This was my first experience donating blood. The volunteers at the camp were very helpful and supportive.
+                Proper guidance was provided at each step. I was seated at a very comfortable recliner and the process lasted
+                around 15 minutes. I was a bit nervous initially but felt really glad I went ahead with this. I recommend
+                everyone to be a part of this event."
+            </div>
+             
+  <!-- This div works if the volunteer clicks on "Unregister" button -->           
+  <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          
+          <!-- This div contains the message user receives when he unregisters for an event --> 
+          <div class="modal-body">
+            <p style="font-size:1.5em; text-align:center">Thats OK! Hope to see you at another event..</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" style="background-color: green; font-family: 'Open Sans Condensed';" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- This script adds the user information on the page-->
+        <script>
+          var firstname = sessionStorage.getItem("firstname");
+          var lastname = sessionStorage.getItem("lastname");
+          var email = sessionStorage.getItem("email")
+          var eventname = sessionStorage.getItem("eventname1")
+          document.getElementById("user_name").innerHTML = firstname +" "+lastname;
+          document.getElementById("email").innerHTML = email;
+          document.getElementById("event_name").innerHTML = eventname;
+          // This function clears the unregistered event from the page 
+          function clearregistration(){
+            document.getElementById("itemrow").className += " disappear";
+            var rootRef = firebase.database().ref();
+            var rootRefmessages = rootRef.child("Events/Event 1/registrations");
+            var strippedemail = sessionStorage.getItem("email");
+            rootRefmessages.child(strippedemail).remove();;
+          }
+    	</script>

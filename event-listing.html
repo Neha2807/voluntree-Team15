@@ -1,0 +1,169 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles/event-listing.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDIc4ZI8QCO_VZa4CXfJVkubAaWHt5NG94",
+        authDomain: "voluntree-c7ba8.firebaseapp.com",
+        databaseURL: "https://voluntree-c7ba8.firebaseio.com",
+        projectId: "voluntree-c7ba8",
+        storageBucket: "voluntree-c7ba8.appspot.com",
+        messagingSenderId: "421391139349"
+      };
+      firebase.initializeApp(config);
+    
+      
+    </script>
+    <script src="event-list.js"></script>  
+</head>
+
+<body id="body">
+    <div class=" topnav navbar-fixed-top" id="myTopnav">
+        <a href=""><img src="images/logo.png" class="logo-img"></a>          
+        <a href="selection.html" id ="signup" class="active">Sign Up</a>
+        <a href="login.html" id ="login">Log In</a>
+        <a href="#about" >Contact</a>
+        <a href="#about">About Us</a>
+        <a href="">
+        <a id ="user">
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+          <div class="dropdown-menu" aria-labelledby="name">
+            <a class="dropdown-item" href="user_profile.html">Profile</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item" id="signout">Sign Out</a>
+          </div>
+        </div>  
+      </a>  
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </a>
+    <script>
+       $('#signout').click(function(){
+          sessionStorage.clear();
+          document.getElementById("name").className+= " disappear";
+          document.getElementById("login").className-= "disappear";
+          document.getElementById("signup").className=" active";
+          window.replace("index.html");
+      })
+    </script>
+    <script>
+          if(sessionStorage.getItem("firstname")!=null){
+          document.getElementById("login").className+=" disappear"
+          document.getElementById("signup").className+=" disappear";
+          document.getElementById("name").innerHTML = "Welcome "+sessionStorage.getItem("firstname")+" !";
+          } else {
+          document.getElementById("user").className= " disappear";
+          document.getElementById("name").className= " disappear";
+          }
+    </script>
+      
+    <script>
+     function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav navbar-fixed-top") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav navbar-fixed-top";
+        }
+      }
+   </script>
+        
+<h1 id="title">Environment</h1>        
+ <div>
+   <div class="opportunities">Showing <b> 1-6 </b> of <b> 20 </b>opportunities </div>
+           
+<!--This is a container for event listings-->               
+<div id= "container">
+<figure class="snip1527">
+        <div class="image"><img src="images/UP1.jpg" alt="pr-sample23" /></div>
+        <figcaption>
+          <div class="date"><span class="day">28</span><span class="month">Oct</span></div>
+          <!--ename sets the event name form the database-->
+          <h3 id="ename1"></h3>
+          <p>
+      
+            You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
+          </p>
+        </figcaption>
+
+        <!--Redirects to event description page-->
+        <a href="event.html"></a>
+      </figure>
+      <figure class="snip1527">
+        <div class="image"><img src="images/UP2.jpg" alt="pr-sample24" /></div>
+        <figcaption>
+          <div class="date"><span class="day">17</span><span class="month">Nov</span></div>
+          <h3 id="ename2"></h3>
+          <p>
+      
+            Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
+          </p>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+      <figure class="snip1527">
+        <div class="image"><img src="images/15169951528_3fe1d6bb2d_k-1024x678.jpg" alt="pr-sample25" /></div>
+        <figcaption>
+          <div class="date"><span class="day">01</span><span class="month">Dec</span></div>
+          <h3 id="ename3"></h3>
+          <p>
+      
+            I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
+          </p>
+        </figcaption>
+        <a href="#"></a>
+      </figure>
+    </div>
+      <div id = "container">
+            <figure class="snip1527">
+                    <div class="image"><img src="images/ngo2_img.jpg" alt="pr-sample23" /></div>
+                    <figcaption>
+                      <div class="date"><span class="day">28</span><span class="month">Oct</span></div>
+                      <h3 id="ename6"></h3>
+                      <p>
+                  
+                        You know what we need, Hobbes? We need an attitude. Yeah, you can't be cool if you don't have an attitude.
+                      </p>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+                  <figure class="snip1527">
+                    <div class="image"><img src="images/1396.jpg" alt="pr-sample24" /></div>
+                    <figcaption>
+                      <div class="date"><span class="day">17</span><span class="month">Nov</span></div>
+                      <h3 id="ename5"></h3>
+                      <p>
+                  
+                        Sometimes the surest sign that intelligent life exists elsewhere in the universe is that none of it has tried to contact us.
+                      </p>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+                  <figure class="snip1527">
+                    <div class="image"><img src="images/UP3.jpg" alt="pr-sample25" /></div>
+                    <figcaption>
+                      <div class="date"><span class="day">01</span><span class="month">Dec</span></div>
+                      <h3 id="ename4"></h3>
+                      <p>
+                  
+                        I don't need to compromise my principles, because they don't have the slightest bearing on what happens to me anyway.
+                      </p>
+                    </figcaption>
+                    <a href="#"></a>
+                  </figure>
+        
+        </div>
+    </div>
+
+    </body>

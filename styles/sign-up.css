@@ -1,0 +1,81 @@
+.container{
+    max-width: 600px;
+    max-height: 300px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 30%;
+    font-family: 'Open Sans Condensed'; 
+    
+     
+}
+
+.jumbotron {
+    max-height: 545px;
+    max-width:  450px;
+    object-position: center;
+    /*box-shadow: 4px 3px 8px #999999;*/
+    -webkit-box-shadow: 0 0 20px #999999;
+            box-shadow: 0 0 20px #999999;
+    padding: 40px;
+}
+
+body{
+    background-image: url("../images/volunteers.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    overflow: hidden; 
+}
+
+
+h1{
+    text-align: center;
+    color: #5c9341;
+    
+}
+
+form {
+    width: 70%;
+    height:600px;
+    padding-bottom: 20px;
+    margin:auto;
+    position:relative;
+    }
+
+#exampleInputStreet{
+    width: 50%;
+}
+
+#exampleInputState{
+    width: 20%;
+}
+
+#exampleInputZip{
+    width: 30%;
+}
+
+.form-group-address{
+    float:left;
+
+}
+
+#submit-btn{
+     text-align: center;
+}
+.btn:hover{
+    -webkit-transform: scale(1.05);
+  }
+
+@media screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        float:none;
+        flex-direction:column;
+        font-family: 'Open Sans Condensed'; 
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        margin: 100 auto !important;
+    
+    }
+}

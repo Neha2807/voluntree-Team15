@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/selection.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class=" topnav navbar-fixed-top" id="myTopnav">
+        <a href=""><img src="images/logo.png" class="logo-img"></a>          
+        <a href="selection.html" id ="signup" class="active">Sign Up</a>
+        <a href="login.html" id ="login">Log In</a>
+        <a href="#about" >Contact</a>
+        <a href="#about">About Us</a>
+        <a href="">
+        <a id ="user">
+        <div class="dropdown1">
+          <a class="nav-link dropdown-toggle" href="#" role="button" id="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+          <div class="dropdown-menu" aria-labelledby="name">
+            <a class="dropdown-item" href="user_profile.html">Profile</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item" id="signout">Sign Out</a>
+          </div>
+        </div>  
+      </a>  
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </a>
+    <script>
+       $('#signout').click(function(){
+          sessionStorage.clear();
+          document.getElementById("name").className+= " disappear";
+          document.getElementById("login").className-= "disappear";
+          document.getElementById("signup").className=" active";
+      })
+    </script>
+    <script>
+          if(sessionStorage.getItem("firstname")!=null){
+          document.getElementById("login").className+=" disappear"
+          document.getElementById("signup").className+=" disappear";
+          document.getElementById("name").innerHTML = "Welcome "+sessionStorage.getItem("firstname")+" !";
+          } else {
+          document.getElementById("user").className= " disappear";
+          document.getElementById("name").className= " disappear";
+          }
+    </script>
+      
+    <script>
+     function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav navbar-fixed-top") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav navbar-fixed-top";
+        }
+      }
+   </script>
+<div id="title">Join a community of people who care as much as you do</div>
+<div id="account">What type of account would you like?</div>
+<div class="container">
+
+  <a href="sign-up-mockup.html" class="card">
+    <img class="card-img-top" src="images/volun.png" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title" style="text-align:center; color: #5C9314; font-weight: bold">Volunteer</h4>
+      
+    </div>
+    <a href="" class="card">
+            <img class="card-img-top" src="images/org.png" alt="Card image" >
+            <div class="card-body">
+              <h4 class="card-title" style="text-align:center; color: #5C9314; font-weight: bold">Organisation</h4>
+              
+            </div>
+
+
+</body>
+</html>

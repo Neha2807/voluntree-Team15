@@ -1,0 +1,222 @@
+<html>
+
+<head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" type="text/css" href="styles/index.css" />
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">  
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+  	<link rel="stylesheet" type="text/css" href="styles/newhomepage.css" />
+</head>
+
+<body>
+
+<!-- This div contains list of tabs visible in the navigation bar -->
+<div class=" topnav navbar-fixed-top" id="myTopnav"> <!-- Navigation bar is fixed at the top as the user scrolls -->
+        <a href=""><img src="images/logo.png" class="logo-img"></a>  <!-- The logo of the website is also placed on the navigation bar -->    
+        <a href="selection.html" id ="signup" class="active">Sign Up</a>
+        <a href="login.html" id ="login">Log In</a>
+        <a href="#about" >Contact</a>
+        <a href="#about">About Us</a>
+       
+        <a href="">
+      
+      	<!-- This div contains a drop down menu when the user is logged in -->
+      	<div id ="user">
+      	
+      		<!-- This div contains a drop down menu when the user is logged in -->
+        	<div class="dropdown">
+        		<a class="nav-link dropdown-toggle" href="#" role="button" id="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          		</a>
+          		
+          		<!-- This div has user profile as the first drop-down item -->
+          		<div class="dropdown-menu" aria-labelledby="name">
+            		<a class="dropdown-item" href="user_profile.html">Profile</a> <!-- User is redirected to the user profile page when clicking on Profile-->
+            	
+            		<div class="dropdown-divider"></div>
+            		
+            	<!-- This contains sign out as the next drop-down item -->
+                <a class="dropdown-item" id="signout"  >Sign Out</a>
+                <div class="dropdown-divider"></div>
+                   	<!-- This contains Error Pageas the next drop-down item -->
+                <a href="error_page.html"class="dropdown-item" id="signout"  >Error Page</a>
+          		</div>
+        	</div>  
+        </div>  
+        	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          		<i class="fa fa-bars"></i>
+        	</a>
+      	</div>
+    	</a>
+    
+    <!-- This script executes when any user signs out from the website. Login and Signup tabs re-appear in the navigation bar -->
+    <script>
+       $('#signout').click(function(){
+          
+          sessionStorage.clear();
+          document.getElementById("user").className= " disappear";
+          document.getElementById("login").className-=" disappear";
+          document.getElementById("signup").className-=" disappear";
+         
+
+      })
+    </script>
+    
+    <!-- This script executes when any user logs into the website. 
+    Sign up and Login tabs disappear from the navigation bar and user can see Welcome (First name )! -->
+    <script>
+          if(sessionStorage.getItem("firstname")!=null){
+          document.getElementById("login").className+=" disappear"
+          document.getElementById("signup").className+=" disappear";
+          document.getElementById("name").innerHTML = "Welcome "+sessionStorage.getItem("firstname")+" !";
+  } else 
+  {
+   document.getElementById("user").className= " disappear";
+  }
+ 
+    </script>
+    
+    <!-- This script is used to make the navigation bar responsive for the mobile -->
+    <script>
+    	function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+    
+    
+    	<!-- This div contains the main title of the home page and drop-down information of the event categories  -->
+    	<div class="banner">
+          	<div class="banner__overlay">
+            	<div class="banner__container">
+              		<h1 class="banner__title">Helping you match to the right causes!</h1> <!-- This h1 tag contains the main title of the home page  -->
+             
+             			<!-- This div contains drop-down information of the event categories  -->
+              			<div class="dropdown">
+                    		<a class="btn btn-lg dropdown-toggle" href="#" role="button" id="MenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      		Select Category</a>
+                  
+                    			<div class="dropdown-menu" aria-labelledby="MenuLink">
+                    				<!-- On clicking Environment from the drop-down, the user is redirected to the list of events for that category  -->
+                      				<a class="dropdown-item" href="event-listing.html">Environment</a>
+                      					<div class="dropdown-divider"></div>
+                      				<a class="dropdown-item" href="#">Healthcare</a>
+                      					<div class="dropdown-divider"></div>
+                      				<a class="dropdown-item" href="#">Animal Welfare</a>
+                    			</div>
+                  		</div>
+                </div>
+            </div>
+            	<img class="banner__scroll-down" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjkgMTI5IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KICA8Zz4KICAgIDxwYXRoIGQ9Im0xMjEuMywzNC42Yy0xLjYtMS42LTQuMi0xLjYtNS44LDBsLTUxLDUxLjEtNTEuMS01MS4xYy0xLjYtMS42LTQuMi0xLjYtNS44LDAtMS42LDEuNi0xLjYsNC4yIDAsNS44bDUzLjksNTMuOWMwLjgsMC44IDEuOCwxLjIgMi45LDEuMiAxLDAgMi4xLTAuNCAyLjktMS4ybDUzLjktNTMuOWMxLjctMS42IDEuNy00LjIgMC4xLTUuOHoiIGZpbGw9IiNGRkZGRkYiLz4KICA8L2c+Cjwvc3ZnPgo=" />
+          </div>
+        </div>
+        
+        <!-- This div contains 1st customer success story -->    
+        <div class="card mb-3" style="max-width: 1280px;margin-top:20px">
+            <div class="row no-gutters">
+            
+            
+            	<!-- This div adds the image on left side -->
+                <div class="col-md-4">
+                    <img src="images/ngo1_img.jpg" class="card-img" alt="ngo1_image">  
+                </div>
+                          
+                <div class="col-md-8">
+                
+                	<!-- This div adds event name, customer story, customer name, and button redirecting to the event page  -->
+                    <div class="card-body">
+                        <h5 class="card-title">Tree Planting</h5>
+                        	<p class="card-text">"I was very delighted with the experience my son got by volunteering for this event. We planted 20 new trees in
+                                the 4 hours we spent during the event. We got a quick overview which helped us understand the process. I would
+                                highly encourage people to volunteer for this event and make it a success."</p>
+                            <br><i class="user_name">- Martin Gregory</i>
+                            <br><br>
+                                <a href="https://www.eventbrite.co.uk/e/tree-planting-tickets-55960086124?aff=ebdssbeac" target="_blank"><button type="button" class="btn btn-success">Read More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- This div contains 2nd customer success story -->               
+        <div class="card mb-3" style="max-width: 1280px;">
+            <div class="row no-gutters">
+            	<!-- This div adds the image on left side -->
+                <div class="col-md-4">
+                    <img src="images/ngo2_img.jpg" class="card-img" alt="ngo2_image">
+                </div>
+                
+            	<div class="col-md-8">
+            	
+            		<!-- This div adds event name, customer story, customer name, and button redirecting to the event page  -->
+       				 <div class="card-body">
+                		<h5 class="card-title">San Franciso Marathon</h5>
+                        	<p class="card-text">"This was my 1st marathon and was delighted with the way the event was organized. Great job by the organizers.
+                                There were so many volunteers during the event which certainly motivated me to keep going. I will definitely
+                                recommend people to participate for this event."</p>
+            			<br><i class="user_name">-Tracy Adams</i>
+                    	<br><br><a href="https://www.letsdothis.com/e/skechers-performance-los-angeles-marathon-71664"
+                        target="_blank"><button type="button" class="btn btn-success">Read More</button></a>
+                </div>
+            </div>
+        </div>
+                        
+        <!-- This div contains 3rd customer success story -->                
+        </div>
+            <div class="card mb-3" style="max-width: 1280px;">
+                <div class="row no-gutters">
+                	<!-- This div adds the image on left side -->
+                    <div class="col-md-4">
+                    	<img src="images/ngo3_img.jpg" class="card-img" alt="ngo3_image">
+                    </div>
+                    <div class="col-md-8">
+                    
+                    	<!-- This div adds event name, customer story, customer name, and button redirecting to the event page  -->
+                        <div class="card-body">
+                              <h5 class="card-title">Blood Donation</h5>
+                              <p class="card-text">"This was my first experience donating blood. The volunteers at the camp were very helpful and supportive.
+                                Proper guidance was provided at each step. I was seated at a very comfortable recliner and the process lasted
+                                around 15 minutes. I was a bit nervous initially but felt really glad I went ahead with this. I recommend
+                                everyone to be a part of this event."</p>
+                                <br><i class="user_name">-Shawna Fernandez</i>
+                                <br><br><a href="http://www.carterbloodcare.org/donate-blood/" target="_blank"><button type="button" class="btn btn-success">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+                      
+        <!-- This div contains the about us section of the website-->            
+        <div class="jumbotron">
+            <h1 class="display-4" id="about">About Us</h1>
+                <p class="lead">VolunTree is a social platform to connect non-profit organizations with volunteers who are interested in being a
+                            part of their social welfare efforts. We wish to personify volunteers as selfless givers that bring about a
+                            positive change. Volunteers can register for an event based on their interest. We also allow representatives of
+                            various non-profits to register and populate the list of current and future events. We enable them to provide
+                            some background of their organization and its narrative. This accounts for the authenticity of these events or
+                            volunteering opportunities.</p>
+            
+            <hr class="my-4">
+                <p class="lead_1">This website also serves as an ideal forum for various corporate organizations who are looking to project their
+                            company’s image as one of taking Corporate Social Responsibility. Through our website, they could also find
+                            recognition through specialized badges against the kind of service they provide. Users could also aid monetary
+                            support by making donations to various social events of their choice.</p>
+                        
+        </div>
+        
+        <!-- This div contains the footer of the website-->              
+    	<div class="footer">
+            <p>&copy Developed by Team 15</p>
+            	<!-- On clicking the facebook iceon, the user is redirected to VolunTree's facebook page-->   
+                <p>Connect on:
+                    <a href="https://www.facebook.com/VolunTree-2109379056020857/?modal=admin_todo_tour" target="_blank"> <img src="Facebook_logo_(square).png"></a>
+                </p>
+		</div>
+</body>

@@ -1,0 +1,98 @@
+
+
+h2  {
+  text-align: center;
+
+   }
+  
+  button
+  {
+  font-family: 'Open Sans Condensed', sans-serif !important;    
+  background: #5c9341;
+  color:#fff;
+  display:block;
+  width:100%;
+  padding:14px 30px;
+  border: 1px solid white;
+  cursor:pointer;
+  outline:0;
+  }
+  
+  button:focus
+  {
+    outline:0;
+    border:1px solid #5c9341;
+  }
+  
+  button:hover {
+  background:#444;
+  color: #fff;
+  transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  text-decoration:underline;
+  }
+
+  .hidden{
+  display: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 90%;
+    
+  }
+  th, td {
+    padding: 0.25rem;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  tbody tr:nth-child(odd) {
+    background: #eee;
+  }
+
+  tr td table
+  {
+      margin:50px;
+      width:95%;
+  }
+  
+  tr td table td
+  {
+      padding: 0.25rem;    
+  }
+  
+  /* specifying properties of body elements */
+  body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #000;
+    font-size: 16px;
+    }
+
+  /* specifying how the flex item will grow or shrink to fit space in its flex container  */
+  .functions{
+    display: flex; 
+  }
+
+  /* specifying delete button properties using relevant class  */
+  .delete_button{
+    color: white;
+    background-color: red; 
+    width: 20%;
+    margin: auto;
+  }
+  /* specifying mouse hover effects on delete button */
+  .delete_button:hover{
+    transform: scale(1.02); 
+
+  }
+    /* specifying details button properties using relevant class*/
+  .details{
+    color: white; 
+    background-color: forestgreen; 
+    align-content: center; 
+  }
+   /* specifying mouse hover effects on details button */
+  .details:hover{
+    transform: scale(1.2);
+    }
