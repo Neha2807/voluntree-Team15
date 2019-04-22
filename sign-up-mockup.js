@@ -4,7 +4,7 @@ var email = document.getElementById("exampleInputEmail1");
 var radios = document.getElementsByName('radio-choice');
 
 
-
+//Save data from Sign-up into the database
 $('#submit').click(function(){
 
         var strippedemail = email.value.replace(/\./g,'');
