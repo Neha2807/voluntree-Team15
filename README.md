@@ -1,6 +1,6 @@
 # voluntree-Team15
 Repository for Final Project code (VolunTree) for ISTM 631. 
-Project created using HTML, CS JavaScript and Firebase Realtime DataBase
+Project created using HTML, CSS JavaScript and Firebase Realtime DataBase
 Hosted at https://voluntree-c7ba8.firebaseapp.com/
 
 Login (Volunteer): testuser@gmail.com
