@@ -4,6 +4,10 @@
 window.onload = function() {
     getevents();
   };
+  function adminSignOut(){
+    sessionStorage.clear()
+    window.location.replace("index.html")
+  }
 
   function  getevents(){
       var ename = document.getElementById("ename")
@@ -54,32 +58,7 @@ window.onload = function() {
       var number = snapshot.child('Events/Event 1/registrations').val();
       console.log(number); 
       $('#hidden_table').append(number); 
-        // var i=0, tablecount = number; 
-        // var html = '<tbody>'+
-        // '                    <tr>'+
-        // '                       <th>First Name</th>'+
-        // '                       <td></td>'+
-        // '                    </tr>'+
-        // '                    <tr>'+
-        // '                       <th>Last Name</th>'+
-        // '                       <td></td>'+
-        // '                    </tr>'+
-        // '                    <tr>'+
-        // '                       <th>Email</th>'+
-        // '                       <td></td>'+
-        // '                    </tr>'+
-        // '                 </tbody>'+
-        // '                 <tr>'+
-        // '                   <td>'+
-        // '                     </td>'+
-        // '                   </tr>';
-          
-        
-   
-
-    // for(i; i<tablecount; i++){
-
-    // }
+       
 
             
   })
